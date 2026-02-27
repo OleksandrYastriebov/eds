@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    {
+      "id": "library",
+      "title": "Block Library",
+      "environments": ["edit"],
+      "url": "/tools/sidekick/library.html",
+      "includedPaths": ["**.docx**"]
+    }
+  ]
+}
