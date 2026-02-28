@@ -17,7 +17,7 @@ indices:
   french:
     <<: *default
     include:
-      - /fr/**
+      - /frq/**
     exclude:
       - /fr/snippets/**
     target: /fr/query-index.json
