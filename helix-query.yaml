@@ -1,8 +1,10 @@
 indices:
   site:
-    include: '**'
-    target: /query-index
+    include:
+      - /en/**
+    target: /query-index.json
     properties:
       page-header:
         select: h1
-        value: el.textContent.trim()
+        value: |
+          el.textContent.trim()
