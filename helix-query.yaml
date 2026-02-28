@@ -1,7 +1,7 @@
 indices:
   english: &default
     include:
-      - **
+      - /**
     exclude:
       - /en/snippets/**
     target: /query-index.json
