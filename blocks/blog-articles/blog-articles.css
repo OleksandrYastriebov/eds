@@ -1,0 +1,152 @@
+/* ==========================================================================
+   1. BASE STILES (MOBILE VERSION AND COMMON RULES)
+   ========================================================================== */
+
+.blog-articles > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+}
+
+.blog-articles .blog-article-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f4f8fc;
+    transition: background-color 0.1s ease, filter 0.1s ease;
+    cursor: pointer;
+}
+
+.blog-articles .blog-articles-image {
+    width: 100%;
+    height: 200px;
+}
+
+.blog-articles .blog-articles-image picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-articles .blog-articles-body {
+    padding: 32px 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right, #f5eefa 0%, #eafcff 100%);
+}
+
+.blog-articles .blog-articles-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #4b1e8e;
+    font-size: 1.5rem;
+    transition: color 0.1s ease;
+}
+
+.blog-articles .blog-articles-desc {
+    margin: 0 0 24px;
+    color: #333333;
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: color 0.1s ease;
+}
+
+.blog-articles .blog-articles-link-wrapper {
+    margin-top: auto;
+}
+
+.blog-articles .blog-articles-link {
+    color: #4b1e8e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.1s ease;
+}
+
+.blog-articles .blog-articles-link::after {
+    content: " >";
+    margin-left: 4px;
+}
+
+/* ==========================================================================
+   2. HOVER EFFECTS
+   ========================================================================== */
+
+.blog-articles .blog-article-card:hover {
+    background-color: #4b1e8e;
+    filter: brightness(0.90);
+}
+
+.blog-articles .blog-article-card:hover .blog-articles-body {
+    background-image: none;
+    background-color: transparent;
+}
+
+.blog-articles .blog-article-card:hover .blog-articles-title,
+.blog-articles .blog-article-card:hover .blog-articles-desc,
+.blog-articles .blog-article-card:hover .blog-articles-link {
+    color: #f8b8d8;
+}
+
+/* ==========================================================================
+   3. TABLET VERSION (from 600px to 991px)
+   ========================================================================== */
+
+@media (min-width: 600px) {
+    .blog-articles > ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-articles .blog-articles-image {
+        height: 200px;
+    }
+
+    .blog-articles .blog-articles-body {
+        padding: 24px 16px;
+    }
+    .blog-articles .blog-articles-title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    .blog-articles .blog-articles-desc {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 16px;
+    }
+    .blog-articles .blog-articles-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+   4. DESKTOP VERSION (FROM 992px)
+   ========================================================================== */
+
+@media (min-width: 992px) {
+    .blog-articles .blog-articles-image {
+        height: 350px;
+    }
+    .blog-articles .blog-articles-body {
+        padding: 32px 24px;
+    }
+    .blog-articles .blog-articles-title {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+    .blog-articles .blog-articles-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+    .blog-articles .blog-articles-link {
+        font-size: 1rem;
+    }
+}
