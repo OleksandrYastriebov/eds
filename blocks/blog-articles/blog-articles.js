@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { optimizeImageForLCP } from '../../scripts/utils.js';
+import optimizeImageForLCP from '../../scripts/utils.js';
 
 export default function decorate(block) {
   const ul = document.createElement('ul');
@@ -21,7 +21,7 @@ export default function decorate(block) {
     if (cols[0] && cols[0].querySelector('picture')) {
       const img = cols[0].querySelector('img');
       const isEager = isFirstSection && index < 2;
-      const optimizedPic = createOptimizedPicture(img.src, img.alt || "article image", isEager, [{ width: '750' }]);
+      const optimizedPic = createOptimizedPicture(img.src, img.alt || 'article image', isEager, [{ width: '750' }]);
 
       if (index === 0 && isFirstSection) {
         optimizeImageForLCP(optimizedPic);

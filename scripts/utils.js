@@ -3,7 +3,7 @@
 * Fixing Lighthouse warnings: add preloading (preloal) and high priority (fetchpriority).
 * @param {HTMLElement} optimizedPic - Generated tag <picture>
 */
-function optimizeImageForLCP(optimizedPic) {
+export default function optimizeImageForLCP(optimizedPic) {
   const optImg = optimizedPic.querySelector('img');
   if (optImg) {
     optImg.setAttribute('fetchpriority', 'high');
@@ -20,7 +20,3 @@ function optimizeImageForLCP(optimizedPic) {
     document.head.append(preloadLink);
   }
 }
-
-export {
-  optimizeImageForLCP
-};

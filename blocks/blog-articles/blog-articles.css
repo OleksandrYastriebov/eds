@@ -51,7 +51,7 @@
 
 .blog-articles .blog-articles-desc {
     margin: 0 0 24px;
-    color: #333333;
+    color: #333;
     font-size: 1rem;
     line-height: 1.6;
     transition: color 0.1s ease;
@@ -100,7 +100,7 @@
    3. TABLET VERSION (from 600px to 991px)
    ========================================================================== */
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
     .blog-articles > ul {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -112,15 +112,18 @@
     .blog-articles .blog-articles-body {
         padding: 24px 16px;
     }
+
     .blog-articles .blog-articles-title {
         font-size: 1.2rem;
         margin-bottom: 12px;
     }
+
     .blog-articles .blog-articles-desc {
         font-size: 0.9rem;
         line-height: 1.4;
         margin-bottom: 16px;
     }
+
     .blog-articles .blog-articles-link {
         font-size: 0.9rem;
     }
@@ -130,22 +133,26 @@
    4. DESKTOP VERSION (FROM 992px)
    ========================================================================== */
 
-@media (min-width: 992px) {
+@media (width >= 992px) {
     .blog-articles .blog-articles-image {
         height: 350px;
     }
+
     .blog-articles .blog-articles-body {
         padding: 32px 24px;
     }
+
     .blog-articles .blog-articles-title {
         font-size: 1.5rem;
         margin-bottom: 16px;
     }
+
     .blog-articles .blog-articles-desc {
         font-size: 1rem;
         line-height: 1.6;
         margin-bottom: 24px;
     }
+
     .blog-articles .blog-articles-link {
         font-size: 1rem;
     }
