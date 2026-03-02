@@ -1,8 +1,12 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { optimizeImageForLCP } from '../../scripts/utils.js';
 
 export default function decorate(block) {
-
   const ul = document.createElement('ul');
+
+  const currentSection = block.closest('.section');
+  const firstSectionOnPage = document.querySelector('main > .section:first-of-type');
+  const isFirstSection = currentSection && (currentSection === firstSectionOnPage);
 
   [...block.children].forEach((row, index) => {
     const li = document.createElement('li');
@@ -10,15 +14,19 @@ export default function decorate(block) {
 
     const cols = [...row.children];
 
-    // --- FIELD 1 - Image ---
+    // --- FIELD 1: IMAGE ---
     const imageDiv = document.createElement('div');
     imageDiv.className = 'blog-articles-image';
 
     if (cols[0] && cols[0].querySelector('picture')) {
       const img = cols[0].querySelector('img');
-      // Only first 2 images are eager loaded, the rest are lazy loaded
-      const isEager = index < 2;
-      const optimizedPic = createOptimizedPicture(img.src, img.alt, isEager, [{ width: '750' }]);
+      const isEager = isFirstSection && index < 2;
+      const optimizedPic = createOptimizedPicture(img.src, img.alt || "article image", isEager, [{ width: '750' }]);
+
+      if (index === 0 && isFirstSection) {
+        optimizeImageForLCP(optimizedPic);
+      }
+
       imageDiv.append(optimizedPic);
     }
 
