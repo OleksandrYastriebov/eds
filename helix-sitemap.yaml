@@ -1,0 +1,17 @@
+sitemaps:
+  oleksandryastriebov:
+    lastmod: YYYY-MM-DD
+    default: en
+    languages:
+      root:
+        source: /query-index.json
+        destination: /sitemap.xml
+      en:
+        source: /en/query-index.json
+        destination: /sitemap-en.xml
+        hreflang: en
+      fr:
+        source: /fr/query-index.json
+        destination: /sitemap-fr.xml
+        hreflang: fr
+        alternate: /fr/{path}
