@@ -1,6 +1,5 @@
 sitemaps:
-  example:
-    lastmod: YYYY-MM-DD
+  default:
     languages:
       en:
         source: /en/query-index.json
