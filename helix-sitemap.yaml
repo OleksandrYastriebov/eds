@@ -11,3 +11,4 @@ sitemaps:
         destination: /sitemap-fr.xml
         hreflang: fr
         alternate: /fr/{path}
+        
