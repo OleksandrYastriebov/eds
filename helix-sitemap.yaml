@@ -1,5 +1,6 @@
 sitemaps:
   default:
+    origin: https://main--eds--oleksandryastriebov.aem.live
     languages:
       en:
         source: /en/query-index.json
